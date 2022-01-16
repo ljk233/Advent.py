@@ -1,5 +1,5 @@
 
-# 2021, Day 4: Binary Diagnostic
+# 2021, Day 4: Giant Squid
 # @Benchmark: 230 ms ± 1.91 ms
 
 
