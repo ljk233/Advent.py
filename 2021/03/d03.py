@@ -8,8 +8,6 @@ from collections import namedtuple
 
 
 sol = namedtuple('Solution', ['part1', 'part2'])
-SAMPLE = "sample.txt"
-INPUT = "input.txt"
 
 
 # return the most common bit in the given rows of grid in the given col
@@ -66,5 +64,5 @@ def solve(f: str) -> namedtuple:
     return sol(power_consumption(input), lsr(input))
 
 
-print("SAMPLE: ", solve(SAMPLE))
-print("INPUT:  ", solve(INPUT))
+print("SAMPLE: ", solve("sample.txt"))
+print("INPUT:  ", solve("input.txt"))
