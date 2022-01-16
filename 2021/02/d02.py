@@ -45,7 +45,6 @@ class AimSubmarine:
 def solve(f: str):
     with open(f, "r") as f:
         input: list[str] = f.read().splitlines()
-
     sub = Submarine()
     aimsub = AimSubmarine()
     for line in input:
