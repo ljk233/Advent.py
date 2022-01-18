@@ -1,6 +1,6 @@
 
 # 2021, Day 6: Lanternfish
-# @Benchmark: 189 µs ± 552 ns
+# %timeit: 189 µs ± 552 ns
 
 
 # %%
@@ -33,6 +33,5 @@ def solve(f: str) -> NamedTuple:
     return sol(sum80, sum256)
 
 
-#%%
 print("SAMPLE: ", solve("sample.txt"))
 print("INPUT:  ", solve("input.txt"))

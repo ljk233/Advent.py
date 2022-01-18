@@ -1,6 +1,6 @@
 
 # 2021, Day 9: Smoke Basin
-# @Benchmark: 30.1 ms ± 650 µs
+# %timeit: 30.1 ms ± 650 µs
 
 
 # %%
@@ -92,6 +92,5 @@ def solve(f: str) -> NamedTuple:
     )
 
 
-#%%
 print("SAMPLE: ", solve("sample.txt"))
 print("INPUT:  ", solve("input.txt"))

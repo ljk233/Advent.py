@@ -1,6 +1,6 @@
 
 # 2021, Day 5: Hydrothermal Venture
-# @Benchmark:
+# %timeit: 160 ms ± 1.47 ms
 
 
 # %%

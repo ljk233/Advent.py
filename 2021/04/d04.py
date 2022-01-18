@@ -1,6 +1,6 @@
 
 # 2021, Day 4: Giant Squid
-# @Benchmark: 230 ms ± 1.91 ms
+# %timeit: 230 ms ± 1.91 ms
 
 
 # %%

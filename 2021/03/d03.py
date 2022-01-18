@@ -1,6 +1,6 @@
 
 # 2021, Day 3: Binary Diagnostic
-# @Benchmark: 1.52 ms ± 11.3 µs per loop
+# %timeit: 1.52 ms ± 11.3 µs per loop
 
 
 # %%

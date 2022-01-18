@@ -1,6 +1,6 @@
 
 # 2021, Day 2: Dive!
-# %timeit: 780 µs
+# %timeit: 769 µs ± 2.43 µs
 
 
 # %%

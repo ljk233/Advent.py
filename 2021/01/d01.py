@@ -1,4 +1,8 @@
 
+# 2021, Day 1: Sonar Sweep
+# %timeit: 617 µs ± 4.59 µs
+
+
 # %%
 from collections import namedtuple
 from typing import NamedTuple

@@ -1,13 +1,13 @@
 
 # 2021, Day 7: The Treachery of Whales
-# @Benchmark: 35.1 ms ± 109 µs
+# %timeit: 35.1 ms ± 109 µs
 
 
 # %%
-from collections import namedtuple, deque
+from collections import namedtuple
 from math import ceil, floor
 from statistics import median, mean
-from typing import NamedTuple, NoReturn
+from typing import NamedTuple
 
 
 sol = namedtuple('Solution', ['part1', 'part2'])
@@ -32,9 +32,5 @@ def solve(f: str) -> NamedTuple:
     )
 
 
-solve("sample.txt")
-
-
-#%%
 print("SAMPLE: ", solve("sample.txt"))
 print("INPUT:  ", solve("input.txt"))
