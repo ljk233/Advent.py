@@ -55,5 +55,3 @@ def solve(f: str) -> NamedTuple:
 
 print("SAMPLE: ", solve("sample.txt"))
 print("INPUT:  ", solve("input.txt"))
-
-# %%
