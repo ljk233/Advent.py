@@ -1,7 +1,6 @@
 
 # 2021, Day 10: Syntax Scoring
-# %timeit: 1.51 ms ± 8.43 µs
-
+# %timeit = 1.51 ms ± 8.43 µs
 
 # %%
 from collections import namedtuple

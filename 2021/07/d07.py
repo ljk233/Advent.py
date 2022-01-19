@@ -1,13 +1,12 @@
 
 # 2021, Day 7: The Treachery of Whales
-# %timeit: 35.1 ms ± 109 µs
-
+# %timeit = 35.1 ms ± 109 µs
 
 # %%
 from collections import namedtuple
+from typing import NamedTuple
 from math import ceil, floor
 from statistics import median, mean
-from typing import NamedTuple
 
 
 sol = namedtuple('Solution', ['part1', 'part2'])

@@ -1,14 +1,13 @@
 
 # 2021, Day 9: Smoke Basin
-# %timeit: 30.1 ms ± 650 µs
-
+# %timeit = 30.1 ms ± 650 µs
 
 # %%
 from collections import namedtuple
 from typing import NamedTuple
+from math import prod
 import numpy as np
 from numpy.typing import NDArray
-from math import prod
 
 
 sol = namedtuple('Solution', ['part1', 'part2'])

@@ -1,7 +1,6 @@
 
 # 2021, Day 4: Giant Squid
-# %timeit: 230 ms ± 1.91 ms
-
+# %timeit = 230 ms ± 1.91 ms
 
 # %%
 from collections import namedtuple, deque

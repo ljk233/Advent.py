@@ -1,7 +1,6 @@
 
 # 2021, Day 6: Lanternfish
-# %timeit: 189 µs ± 552 ns
-
+# %timeit = 189 µs ± 552 ns
 
 # %%
 from collections import namedtuple, deque

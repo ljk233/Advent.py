@@ -1,12 +1,11 @@
 
 # 2021, Day 5: Hydrothermal Venture
-# %timeit: 160 ms ± 1.47 ms
-
+# %timeit = 160 ms ± 1.47 ms
 
 # %%
 from collections import namedtuple, Counter
-from dataclasses import dataclass
 from typing import NamedTuple
+from dataclasses import dataclass
 from parse import parse
 
 
