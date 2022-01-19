@@ -5,7 +5,6 @@
 
 # %%
 from collections import namedtuple
-from statistics import median
 from typing import NamedTuple
 from statistics import median
 
