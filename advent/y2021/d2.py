@@ -1,14 +1,7 @@
 
-# 2021, Day 2: Dive!
-# %timeit = 769 µs ± 2.43 µs
-
-# %%
-from collections import namedtuple
+from ..solution import Solution
 from dataclasses import dataclass
 from typing import NoReturn
-
-
-sol = namedtuple('Solution', ['part1', 'part2'])
 
 
 @dataclass
@@ -26,9 +19,7 @@ class Submarine:
 
 
 @dataclass
-class AimSubmarine:
-    x: int = 0
-    y: int = 0
+class AimSubmarine(Submarine):
     aim: int = 0
 
     def next(self, cmd: str, step: int) -> NoReturn:
@@ -41,18 +32,11 @@ class AimSubmarine:
             self.y += (self.aim * step)
 
 
-def solve(f: str):
-    with open(f, "r") as f:
-        input: list[str] = f.read().splitlines()
+def solve(input: list[str]) -> Solution:
     sub = Submarine()
     aimsub = AimSubmarine()
     for line in input:
         cmd, step = line.split()
         sub.next(cmd, int(step))
         aimsub.next(cmd, int(step))
-
-    return sol(sub.x * sub.y, aimsub.x * aimsub.y)
-
-
-print("SAMPLE: ", solve("sample.txt"))
-print("INPUT:  ", solve("input.txt"))
+    return Solution(sub.x * sub.y, aimsub.x * aimsub.y)
