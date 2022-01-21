@@ -1,13 +1,7 @@
 
-# 2021, Day 6: Lanternfish
-# %timeit = 189 µs ± 552 ns
-
-# %%
-from collections import namedtuple, deque
-from typing import NamedTuple, NoReturn
-
-
-sol = namedtuple('Solution', ['part1', 'part2'])
+from ..solution import Solution
+from collections import  deque
+from typing import NoReturn
 
 
 def simulate(lantern_fish: deque[int]) -> NoReturn:
@@ -15,9 +9,7 @@ def simulate(lantern_fish: deque[int]) -> NoReturn:
     lantern_fish[6] += lantern_fish[-1]
 
 
-def solve(f: str) -> NamedTuple:
-    with open(f, "r") as f:
-        input: list[str] = f.read().splitlines()
+def solve(input: list[str]) -> Solution:
     numbers = [int(x) for x in input[0].split(",")]
     lantern_fish = deque([numbers.count(number) for number in range(9)])
     # part 1, 80 days
@@ -29,8 +21,4 @@ def solve(f: str) -> NamedTuple:
         simulate(lantern_fish)
     sum256 = sum(lantern_fish)
     
-    return sol(sum80, sum256)
-
-
-print("SAMPLE: ", solve("sample.txt"))
-print("INPUT:  ", solve("input.txt"))
+    return Solution(sum80, sum256)
