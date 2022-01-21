@@ -1,15 +1,8 @@
 
-# 2021, Day 4: Giant Squid
-# %timeit = 230 ms ± 1.91 ms
-
-# %%
-from collections import namedtuple, deque
-from typing import NamedTuple
+from ..solution import Solution
+from collections import deque
 import numpy as np
 from numpy.typing import NDArray
-
-
-sol = namedtuple('Solution', ['part1', 'part2'])
 
 
 def make_seq_boards(input: list[str]) -> tuple[deque, NDArray]:
@@ -46,17 +39,11 @@ def play_bingo(boards: NDArray, numbers: deque[int]) -> list[tuple[NDArray, int]
 
 def score(nstate: tuple[NDArray, int]) -> int:
     board, number = nstate
-    board = np.where(board==-1, 0, board)
+    board = np.where(board == -1, 0, board)
     return board.sum() * number
 
 
-def solve(f: str) -> NamedTuple:
-    with open(f, "r") as f:
-        input: list[str] = f.read().splitlines()
+def solve(input: list[str]) -> Solution:
     seq, boards = make_seq_boards(input)
     nstate = play_bingo(boards, seq)
-    return sol(score(nstate[0]), score(nstate[-1]))
-
-
-print("SAMPLE: ", solve("sample.txt"))
-print("INPUT:  ", solve("input.txt"))
+    return Solution(score(nstate[0]), score(nstate[-1]))
