@@ -1,18 +1,10 @@
 
-# 2021, Day 7: The Treachery of Whales
-# %timeit = 35.1 ms ± 109 µs
-
-# %%
-from collections import namedtuple
-from typing import NamedTuple
+from ..solution import Solution
 from math import ceil, floor
 from statistics import median, mean
 
 
-sol = namedtuple('Solution', ['part1', 'part2'])
-
-
-def cost(crabs_pos, mean_pos):
+def cost(crabs_pos: list[int], mean_pos: int) -> int:
     fuel = [abs(pos - mean_pos) for pos in crabs_pos]
     adj = []
     while len(fuel) >= 1:
@@ -20,16 +12,10 @@ def cost(crabs_pos, mean_pos):
     return sum(adj)
 
 
-def solve(f: str) -> NamedTuple:
-    with open(f, "r") as f:
-        input: list[str] = f.read().splitlines()
+def solve(input: list[str]) -> Solution:
     crabs_pos = sorted([int(x) for x in input[0].split(",")])
     mean_pos = mean(crabs_pos)  # save us calculating the mean position twice
-    return sol(
+    return Solution(
         sum([abs(pos - int(median(crabs_pos))) for pos in crabs_pos]),
         min(cost(crabs_pos, floor(mean_pos)), cost(crabs_pos, ceil(mean_pos))),
     )
-
-
-print("SAMPLE: ", solve("sample.txt"))
-print("INPUT:  ", solve("input.txt"))
