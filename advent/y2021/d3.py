@@ -1,12 +1,5 @@
 
-# 2021, Day 3: Binary Diagnostic
-# %timeit = 1.52 ms ± 11.3 µs per loop
-
-# %%
-from collections import namedtuple
-
-
-sol = namedtuple('Solution', ['part1', 'part2'])
+from ..solution import Solution
 
 
 # return the most common bit in the given rows of grid in the given col
@@ -23,7 +16,6 @@ def mode(grid: list[str], rows: list[int], col: int) -> int:
         return 0
 
 
-# return the power consumption of the submarine
 def power_consumption(grid: list[str]) -> int:
     # recursive funtion to calculate the power concumption
     def search(rows: list[int], gamma: str, epsilon: str, col: int) -> str:
@@ -38,7 +30,6 @@ def power_consumption(grid: list[str]) -> int:
     return search([i for i in range(0, len(grid))], "", "", 0)
 
 
-# return the power consumption of the submarine
 def lsr(grid: list[str]) -> int:
     # recursive function to calculate the lsr.
     def search(rows: list[int], col: int, common: bool):
@@ -57,11 +48,5 @@ def lsr(grid: list[str]) -> int:
     return o2_rating * co2_rating
 
 
-def solve(f: str) -> namedtuple:
-    with open(f, "r") as f:
-        input: list[str] = f.read().splitlines()
-    return sol(power_consumption(input), lsr(input))
-
-
-print("SAMPLE: ", solve("sample.txt"))
-print("INPUT:  ", solve("input.txt"))
+def solve(input: list[str]) -> Solution:
+    return Solution(power_consumption(input), lsr(input))
