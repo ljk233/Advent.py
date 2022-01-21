@@ -1,0 +1,14 @@
+
+# venv and package-egg
+.venv
+.virtual_documents
+advent/advent.egg-info/dependency_links.txt
+advent/advent.egg-info/PKG-INFO
+advent/advent.egg-info/SOURCES.txt
+advent/advent.egg-info/top_level.txt
+advent.egg-info/*
+
+# pycache and checkpoints
+advent/__pycache__/*.pyc
+advent/*/__pycache__/*.pyc
+*/*/.ipynb_checkpoints/
