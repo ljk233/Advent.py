@@ -6,6 +6,6 @@ def input(year: int, day: int):
 
 
 def sample(year: int, day: int):
-    with open(f"..\\..\\samples\\{year}\\d{day}.txt", "r") as f:
+    with open(f"..\\..\\inputs\\{year}\\s{day}.txt", "r") as f:
         sample = f.read().splitlines()
     return sample
