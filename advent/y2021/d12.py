@@ -1,7 +1,6 @@
 
-
 from ..solution import Solution
-from collections import namedtuple, defaultdict
+from collections import defaultdict
 
 
 def get_paths(input: list[str]) -> defaultdict[str, list[str]]:
@@ -23,7 +22,6 @@ def have_visited(cave, visited) -> bool:
     return visited[cave] >= 1
 
 
-# backtracking recursive function
 def search(visited, caves, cave, can_revisit):
     if have_visited(cave, visited) and not can_revisit:
         return 0
@@ -33,10 +31,12 @@ def search(visited, caves, cave, can_revisit):
         if is_small(cave):
             visited[cave] += 1
         proc = can_revisit and visited[cave] <= 1
-        paths = [search(visited, caves, next, proc) for next in caves[cave]]
+        subtotal = 0
+        for next_cave in caves[cave]:
+            subtotal += search(visited, caves, next_cave, proc)
         if is_small(cave):
             visited[cave] -= 1
-        return sum(paths)
+        return subtotal
 
 
 def solve(input: list[str]) -> Solution:
