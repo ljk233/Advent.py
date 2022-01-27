@@ -14,26 +14,26 @@ def get_paths(input: list[str]) -> defaultdict[str, list[str]]:
     return paths
 
 
+def has(visited, cave) -> bool:
+    return visited[cave] >= 1
+
+
 def is_small(cave: str) -> bool:
     return cave[0].islower()
 
 
-def have_visited(cave, visited) -> bool:
-    return visited[cave] >= 1
-
-
-def search(visited, caves, cave, can_revisit):
-    if have_visited(cave, visited) and not can_revisit:
+def search(caves, cave, visited, can_revisit):
+    if has(visited, cave) and not can_revisit:
         return 0
     elif cave == "end":
         return 1
     else:
         if is_small(cave):
             visited[cave] += 1
-        proc = can_revisit and visited[cave] <= 1
+        can_proceed = can_revisit and visited[cave] <= 1
         subtotal = 0
         for next_cave in caves[cave]:
-            subtotal += search(visited, caves, next_cave, proc)
+            subtotal += search(caves, next_cave, visited, can_proceed)
         if is_small(cave):
             visited[cave] -= 1
         return subtotal
@@ -46,6 +46,6 @@ def solve(input: list[str]) -> Solution:
     paths = get_paths(input)
     visited = defaultdict(zero)
     return Solution(
-        search(visited, paths, "start", False),
-        search(visited, paths, "start", True)
+        search(paths, "start", visited, can_revisit=False),
+        search(paths, "start", visited, can_revisit=True)
     )
