@@ -52,6 +52,20 @@ def each_neighbour(matrix: NDArray, index: CartesianIndex) -> list[CartesianInde
     return neighbours
 
 
+def each_nearest_neighbour(matrix: NDArray, index: CartesianIndex) -> list[CartesianIndex]:
+    neighbours = []
+    x, y = index
+    if in_bounds(matrix, (x-1, y)):
+        neighbours.append((x-1, y))
+    if in_bounds(matrix, (x+1, y)):
+        neighbours.append((x+1, y))
+    if in_bounds(matrix, (x, y-1)):
+        neighbours.append((x, y-1))
+    if in_bounds(matrix, (x, y+1)):
+        neighbours.append((x, y+1))
+    return neighbours
+
+
 def are_diag(index: CartesianIndex, neighbour: CartesianIndex) -> bool:
     """Return True if index and neighbour are diagonal to each other.
     Otherwise return False.
